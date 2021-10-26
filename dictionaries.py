@@ -46,7 +46,7 @@ class RandomTextEnglishDictionary:
     def __init__(self) -> None:
         resp = requests.get("https://randomtextgenerator.com/")
         soup = BeautifulSoup(resp.text, "lxml")
-        self.text = soup.find(id="generatedtext").text
+        self.text = soup.find(id="randomtext_box").text
 
     def get_data(self):
         return format_text(self.text)
